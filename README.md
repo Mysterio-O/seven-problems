@@ -102,3 +102,36 @@
  - calculating primary diagonal (top-left -> bottom-right) with the `i` value;
  - calculating the secondary diagonal (top-right -> bottom-left) with the `i` and `n` value;
  - returning the absolute difference with `Math.abs()` method;
+
+---
+
+## plusMinus
+
+### Solution
+```javascript
+function plusMinus(arr) {
+    // Write your code here
+    if (!Array.isArray(arr)) return 'input must be an Array';
+    const n = arr.length;
+    let positives = 0;
+    let negatives = 0;
+    let zeros = 0
+    for (const a of arr) {
+        if (a < 0) {
+            negatives++
+        } else if (a === 0) {
+            zeros++
+        } else {
+            positives++
+        }
+    };
+    console.log((positives / n).toFixed(6))
+    console.log((negatives / n).toFixed(6))
+    console.log((zeros / n).toFixed(6))
+}
+```
+**Arguments:** `Array of integers`
+ - checking the input type, if not `Array` -> `return`;
+ - looping through the array and checking the value of the element from every iteration;
+ - increasing the count of the type between `positive`, `negative` and `zero` by condition in the loop;
+ - diving the type numbers by the total length of the input `Array` and using toFixed method for ensuring 6 decimal places
