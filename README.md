@@ -1,11 +1,10 @@
 # 7 Problem Solving (Solve Me First, Simple Array Sum, Compare the Triplets, A Very Big Sum, Diagonal Difference, Plus Minus, Staircase)
 ---
-## arrayOfSum
+## 1. arrayOfSum
 
 ### Solution
    ```javascript
        function simpleArraySum(ar) {
-         // Write your code here
          if (!Array.isArray(ar)) return "input must be an array";
          let int = 0;
             for (const a of ar) {
@@ -22,3 +21,43 @@
  - if the element from the iteration is not a number -> skips that iteration by `continue`;
  - if the element is a number then adding that number with the `int` variable;
  - returning `int` variable after the loop, which is the sum of the numbers;
+
+ ---
+
+ ## 2. compareTriplets
+
+ ### Solution
+ ```javascript
+ function compareTriplets(a, b) {
+    if (!Array.isArray(a) || !Array.isArray(b)) {
+        return 'inputs must be array of int'
+    }
+    let alice = 0;
+    let bob = 0;
+    for (let i = 0; i < a.length; i++) {
+
+        if (a[i] < 1 || a[i] > 100) continue;
+        if (b[i] < 1 || b[i] > 100) continue;
+
+        if (a[i] > b[i]) {
+            alice += 1;
+        } else if (a[i] < b[i]) {
+            bob += 1;
+        } else {
+            alice += 0;
+            bob += 0;
+        }
+
+    }
+    const arr = [alice, bob]
+    return arr;
+}
+```
+
+**Argument:** `a & b (array of int)`
+ - first checking the inputs type, if it is not an `Array` -> return;
+ - creating loop based on input `Array` length;
+ - skipping the iteration when element from both `Array` is less than 1 or higher than 100;
+ - comparing by index value, if a[element] is bigger then b[element] alice gets 1 point;
+ - else bob gets 1 point;
+ - returning their point in an `Array`;
