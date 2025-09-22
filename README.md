@@ -105,7 +105,7 @@
 
 ---
 
-## plusMinus
+## 5. plusMinus
 
 ### Solution
 ```javascript
@@ -135,3 +135,28 @@ function plusMinus(arr) {
  - looping through the array and checking the value of the element from every iteration;
  - increasing the count of the type between `positive`, `negative` and `zero` by condition in the loop;
  - diving the type numbers by the total length of the input `Array` and using toFixed method for ensuring 6 decimal places
+
+---
+
+## 6. staircase
+
+### Solution
+```javascript
+function staircase(n) {
+    if(typeof n !== 'number' || Number.isNaN(n)) return 'input must be a number';
+    if(n<1)return 'provide valid number which is bigger than 0';
+    if(n> 100) return 'provide a valid number which is less than 101';
+    for(let i = 1;i <= n;i++){
+        const spaces = " ".repeat(n - i);
+        const hashes = "#".repeat(i);
+        console.log(spaces + hashes);
+    }
+}
+```
+**Arguments:** `number`
+ - checking the input type, if not number -> return
+ - checking if the number is less than 1 and greater than 100 -> `return`;
+ - creating loop based on number;
+ - counting space count by subtracting `i` value from `n` value;
+ - counting hash count by `i` count;
+ - printing `spaces` and `hashes`;
