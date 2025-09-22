@@ -43,11 +43,7 @@
             alice += 1;
         } else if (a[i] < b[i]) {
             bob += 1;
-        } else {
-            alice += 0;
-            bob += 0;
-        }
-
+        };
     }
     const arr = [alice, bob]
     return arr;
