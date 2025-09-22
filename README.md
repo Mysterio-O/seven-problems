@@ -14,7 +14,7 @@
              }
           return int;
         }
-    ```
+```
 
 **Argument:** `takes Array of number as argument`
  - checking the input type, if its not an Array -> return;
