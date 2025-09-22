@@ -160,3 +160,31 @@ function staircase(n) {
  - counting space count by subtracting `i` value from `n` value;
  - counting hash count by `i` count;
  - printing `spaces` and `hashes`;
+
+---
+
+## 7. miniMaxSum
+
+### Solution
+```javascript
+function miniMaxSum(arr) {
+    if (!Array.isArray(arr)) return 'input must be an Array of integers';
+    let total = arr.reduce((a, b) => a + b, 0);
+
+    const largestNumber = Math.max(...arr);
+    const smallestNumber = Math.min(...arr);
+
+    const smallest = total - largestNumber;
+    const biggest = total - smallestNumber;
+
+    console.log(smallest + " " + biggest);
+
+}
+```
+**Argument:** `Array of integers`
+ - checking the type of the argument, if not an `Array`, -> `return`;
+ - calculating the sum with `reduce` method;
+ - calculating `largestNumber` & `smallestNumber` by **Math.max()** & **Math.min()** methods;
+ - calculating the smallest sum value by subtracting the `highestNumber` from the `total` value;
+ - calculating the biggest sum value by subtracting the `smallestNumber` from the `total` value;
+ - printing the result with a space between by adding an empty `string`;
