@@ -28,7 +28,7 @@ function readLine() {
 
 function staircase(n) {
     // Write your code here
-    if(typeof n !== 'number' || Number.isNaN(n)) return 'input must be a valid number';
+    if(typeof n !== 'number') return 'input must be a valid number';
     if(n<1)return 'provide valid number which is bigger than 0';
     if(n> 100) return 'provide a valid number which is less than 101';
     for(let i = 1;i <= n;i++){
