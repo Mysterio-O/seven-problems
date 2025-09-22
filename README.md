@@ -65,7 +65,6 @@
  ### Solution
  ```javascript
  function aVeryBigSum(ar) {
-    // Write your code here
     if (!Array.isArray(ar)) return 'input must be an array of int';
     let long = 0;
     for (const n of ar) {
@@ -79,3 +78,27 @@
  - loop through the `Array` and add every number with `JavaScript` `Number` method;
  - `Number` in `JavaScript` handles big integers automatically;
  - returning the `long` variable, which is the sum of big integers;
+
+ ---
+
+ ## 4. diagonalDifference
+
+ ### Solution
+ ```javascript
+ function diagonalDifference(arr) {
+    const n = arr.length;
+    let primary_sum = 0;
+    let secondary_sum = 0;
+    for(let i = 0; i < n; i++){
+        primary_sum += arr[i][i];
+        secondary_sum += arr[i][n -1 - i]
+    }
+    return Math.abs(primary_sum - secondary_sum);
+}
+```
+**Arguments:** `Array of Array of integers`
+ - taking `n` as the length of the main argument;
+ - creating a loop based on array length;
+ - calculating primary diagonal (top-left -> bottom-right) with the `i` value;
+ - calculating the secondary diagonal (top-right -> bottom-left) with the `i` and `n` value;
+ - returning the absolute difference with `Math.abs()` method;
