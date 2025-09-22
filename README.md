@@ -16,7 +16,7 @@
 ```
 
 **Argument:** `takes Array of number as argument`
- - checking the input type, if its not an Array -> return;
+ - checking the input type, if its not an Array -> `return`;
  - then looping through that Array, and checking element type;
  - if the element from the iteration is not a number -> skips that iteration by `continue`;
  - if the element is a number then adding that number with the `int` variable;
@@ -51,9 +51,31 @@
 ```
 
 **Argument:** `a & b (array of int)`
- - first checking the inputs type, if it is not an `Array` -> return;
+ - first checking the inputs type, if it is not an `Array` -> `return`;
  - creating loop based on input `Array` length;
  - skipping the iteration when element from both `Array` is less than 1 or higher than 100;
  - comparing by index value, if a[element] is bigger then b[element] alice gets 1 point;
  - else bob gets 1 point;
  - returning their point in an `Array`;
+
+ ---
+
+ ## 3. aVeryBigSum
+
+ ### Solution
+ ```javascript
+ function aVeryBigSum(ar) {
+    // Write your code here
+    if (!Array.isArray(ar)) return 'input must be an array of int';
+    let long = 0;
+    for (const n of ar) {
+        long += Number(n);
+    }
+    return long
+}
+```
+**Argument:** `ar is an Array of integer`
+ - first checking the input type, if its not an `Array` -> `return`;
+ - loop through the `Array` and add every number with `JavaScript` `Number` method;
+ - `Number` in `JavaScript` handles big integers automatically;
+ - returning the `long` variable, which is the sum of big integers;
